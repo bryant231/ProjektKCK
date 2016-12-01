@@ -9,7 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.mygdx.game.ProjektKCK;
 
-public abstract class AbstractScreen implements Screen {
+public abstract class AbstractScreen implements Screen {   //screen na ktorym budujemy pozostale , zawiera scene i kamere
 	
 	protected ProjektKCK game;
 	protected Stage stage;

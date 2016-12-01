@@ -12,7 +12,7 @@ public class ProjektKCK extends Game {
 	
 	@Override
 	public void create() {
-		this.setScreen(new MenuScreen(this));
+		this.setScreen(new MenuScreen(this));   //prze³¹czamy ekran na menu screen
 	}
 
 

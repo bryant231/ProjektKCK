@@ -10,7 +10,7 @@ public class DesktopLauncher {
 		
 		config.height = ProjektKCK.HEIGHT;
 		config.width = ProjektKCK.WIDTH;
-		config.resizable = false;
+		config.resizable = true;
 		config.title = ProjektKCK.GameName;
 		new LwjglApplication(new ProjektKCK(), config);
 	}
