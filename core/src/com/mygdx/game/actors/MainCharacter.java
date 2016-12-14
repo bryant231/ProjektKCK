@@ -23,7 +23,7 @@ public class MainCharacter extends Actors {
 		init(X, Y);
 	}
 
-	public void move(String gdzie, AbstractButton[] CantStand, int iloscElem) {
+	public void move(String gdzie, final AbstractButton[] CantStand, final int iloscElem) {
 		
 		overlaptrue = false;  //flage ustawiamy na nie bo glowna postac nie ma kolizji
 		
