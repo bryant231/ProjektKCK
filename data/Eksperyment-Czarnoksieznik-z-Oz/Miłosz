@@ -1,0 +1,34 @@
+U-user S-bot 
+U: Witaj, chcę kupić dobry pancerz.
+// system wyświetla pancerze
+U:  Kupuję ciężki pancerz i chciałbym kupić broń dystansową.
+// sprzedawca sprzedaje ciężki pancerz
+// sprzedawca pokazuje dostępne bronie
+NPC: Posiadam na sprzedaż różne bronie: miecz jednoręczny, miecz dwuręczny, topór.
+U: Ile kosztuje miecz jednoręczny?
+NPC: Miecz jednoręczny kosztuje 100$.
+U: Kupuję miecz jednoręczny
+// sprzedawca sprzedaje miecz jednoręczny.
+NPC: Czy chcesz kupić coś jeszcze ? Jeśli nie wpisz "Koniec zakupów"
+U: Koniec zakupów.
+U: Idź w dół.
+U: Idź 4 kroki w prawo.
+U: Idź w górę.
+S: Nie możesz iść w górę.
+U: Idź w 2 kroki w prawo.
+U: Atakuj mieczem.
+U: Uniknij ataku.
+U: Atakuj mieczem.
+S: Przeciwnik pokonany.
+U: Idź 5 kroków w dół.
+S: Przeciwnik Cię zaatakował. Zostało Ci 90 punktów życia.
+U: Atakuj toporem.
+U: Uniknij ataku.
+U: Atakuj mieczem.
+S: Przeciwnik uniknął ataku.
+S: Przeciwnik zaatakował Cię atakiem krytycznym. Zostało Ci 60 punktów życia.
+U: Atakuj mieczem.
+S: Przeciwnik pokonany.
+
+
+

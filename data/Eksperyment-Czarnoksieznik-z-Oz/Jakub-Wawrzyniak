@@ -1,0 +1,63 @@
+Użytkownik - U, System - S
+S: Co chcesz zrobić?
+U: Pokaż Ekwipunek.
+//System wyświetla ekwipunek
+S: Co chcesz zrobić w ekwipunku?
+U: Porównaj statystyki zbroi.
+S: Które zbroje chcesz porównać?
+U: Porównaj czarną z czerwoną.
+//System wyświetla porównanie
+S: Wpisz “Koniec porównania”, jeśli chcesz wrócić do ekwipunku.
+U: Koniec porównania
+//System wraca do ekwipunku
+U:Wyjdź z ekwipunku.
+//System wraca do gry
+U: Opisz lokację.
+//System wyświetla opis bieżącej lokacji.
+S: Wpisz dowolny znak, aby wyjść.
+U:Z
+//System wraca do gry
+U: Wyświetl informację o aktualnym quescie.
+//System wyświetla opis bieżącego questa.
+S:Wpisz dowolny znak, aby wyjść.
+U:S
+//System wraca do gry
+U: Idź do najbliższego miasta.
+//System pokazuję mapę świata gry z zaznaczoną drogą.
+U: Idź w lewo.
+U: Idź w prawo.
+U: Idź przed siebie.
+U: Cofnij się.
+U: Podejdź do przeciwnika.
+U: Atakuj przeciwnika z najmniejszą ilością zdrowia.
+S: Która bronią chcesz zaatakować?
+U: Rzuć zaklęcie.
+S: Które zaklęcie chcesz rzucić?
+U: Jakie mam do wyboru?
+S: Piorun, Ognista kula.
+U: Rzucam zaklęcie Piorun.
+S: Zaatakowałeś przeciwnika zaklęciem Piorun zadając mu x obrażeń.
+S: Przeciwnik zaatakował cię i zabrał ci x pkt życia.
+U: Rzucam zaklęcie Ognista Kula.
+S: Przeciwnik uniknął ataku.
+U: Rzucam zaklęcie Ognista Kula.
+S: Masz za mało many.
+S: Przeciwnik zaatakował cię, ale udało ci się zrobić unik.
+U: Wyrzuć łuk.
+S: Który łuk chcesz wyrzucić?
+U: Z najsłabszym atakiem.
+U: Wyrzuć strzały.
+S: Ile strzał chcesz wyrzucić?
+U: 7
+U: Witaj, co masz na sprzedaż?
+//System wyświetla co NPC ma na sprzedaż.
+U: Podaj przedmioty, na które mnie stać.
+//System wyświetla jakie przedmioty gracz może kupić u tego NPC
+U: Kupuję 12 strzał, drewniany łuk i miecz.
+S(NPC): Czy napewno chcesz kupić 12 strzał, drewniany łuk i miecz za x waluty?
+U: Tak.
+S(NPC): Czy chcesz kupić coś jeszcze?
+U: Nie.
+S(NPC): Żegnaj.
+U: Żegnaj.
+U: Wyjdź ze sklepu na zewnątrz.
