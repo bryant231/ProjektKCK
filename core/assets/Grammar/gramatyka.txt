@@ -1,0 +1,33 @@
+Z_Idz -> czasownik1 kierunek
+Z_Idz -> kierunek czasownik1
+Z_Atakuj -> czasownik2 dopelnienie_ataku
+Z_Atakuj -> dopelnienie_ataku czasownik2
+czasownik1 -> idz
+czasownik2 -> atakuj
+czasownik2 -> bij
+czasownik2 -> uderzaj
+czasownik2 -> uderz
+kierunek -> spojnik1 orientacja1
+kierunek -> spojnik2 orientacja2
+kierunek -> spojnik3 orientacja3
+dopelnienie_ataku -> bron kierunek
+dopelnienie_ataku -> kierunek bron
+o_x_kratek -> spojnik4 liczba_kratek
+bron -> mieczem
+bron -> toporem
+liczba_kratek -> liczba_dla_parsera jednostka1
+jednostka1 -> kratek
+jednostka1 -> kratki
+spojnik1 -> w
+spojnik1 -> na
+spojnik2 -> do
+spojnik3 -> przed
+spojnik4 -> o
+orientacja1 -> prawo
+orientacja1 -> lewo
+orientacja1 -> dol
+orientacja1 -> gore
+orientacja2 -> gory
+orientacja2 -> tylu
+orientacja2 -> przodu
+orientacja3 -> siebie
