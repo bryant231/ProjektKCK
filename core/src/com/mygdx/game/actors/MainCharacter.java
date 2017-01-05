@@ -44,8 +44,8 @@ public class MainCharacter extends Actors {
 							break;
 						}
 					}
-					if (overlaptrue == true) {    //jesli true to ma tam nie isc i wypisac w chmurce ze nie moze na to wejsc
-						Cloud.textField.setMessageText("Nie moge na\nto wejsc!");
+					if (overlaptrue == true) {    //jesli true to ma tam nie isc i wypisac w chmurce ze nie moze na to wejœæ
+						Cloud.textField.setMessageText("Nie moge na\nto wejœæ!");
 						stage.addActor(Cloud.textField);
 						Timer.schedule(new Task() {
 							@Override
@@ -77,7 +77,7 @@ public class MainCharacter extends Actors {
 						}
 					}
 					if (overlaptrue == true) {
-						Cloud.textField.setMessageText("Nie moge na\nto wejsc!");
+						Cloud.textField.setMessageText("Nie moge na\nto wejœæ!");
 						stage.addActor(Cloud.textField);
 						Timer.schedule(new Task() {
 							@Override
@@ -109,7 +109,7 @@ public class MainCharacter extends Actors {
 						}
 					}
 					if (overlaptrue == true) {
-						Cloud.textField.setMessageText("Nie moge na\nto wejsc!");
+						Cloud.textField.setMessageText("Nie moge na\nto wejœæ!");
 						stage.addActor(Cloud.textField);
 						Timer.schedule(new Task() {
 							@Override
@@ -140,7 +140,7 @@ public class MainCharacter extends Actors {
 						}
 					}
 					if (overlaptrue == true) {
-						Cloud.textField.setMessageText("Nie moge na\nto wejsc!");
+						Cloud.textField.setMessageText("Nie moge na\nto wejœæ!");
 						stage.addActor(Cloud.textField);
 						Timer.schedule(new Task() {
 							@Override

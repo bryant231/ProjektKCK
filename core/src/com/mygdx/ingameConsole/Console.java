@@ -50,8 +50,8 @@ public class Console {
 	private FreeTypeFontParameter parameter;
 	
 	
-	public Console( int WIDTH , float X , float Y, int size) {
-		bitMapFontInit(size);
+	public Console( int WIDTH , float X , float Y) {
+		bitMapFontInit(1f);
 		textFieldStyleInit();
 		textFieldInit( WIDTH , X , Y);
 		setListener();
@@ -136,7 +136,7 @@ public class Console {
 
 	public void textFieldInit( int WIDTH, float X , float Y ) {
 		textField = new TextField("", textFieldStyle);
-		textField.setMessageText("...Wpisz co mam zrobic...");
+		textField.setMessageText("Wpisz co mam zrobić");
 		textField.setWidth(WIDTH);
 		textField.setX(X);
 		textField.setY(Y);
@@ -144,13 +144,9 @@ public class Console {
 	}
 	
 
-	public void bitMapFontInit(int size) {
-		bitmapFont = new BitmapFont();
-		generator = new FreeTypeFontGenerator(Gdx.files.internal("TimesNewRoman.ttf"));
-		parameter = new FreeTypeFontParameter();
-		parameter.size = size;
-		bitmapFont = generator.generateFont(parameter);
-		generator.dispose();
+	public void bitMapFontInit(float size) {
+		bitmapFont = new BitmapFont(Gdx.files.internal("font/MYFONT.fnt"));
+		bitmapFont.getData().setScale(size);
 	}
 	
 	public void setPosition(float X, float Y) {

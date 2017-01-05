@@ -55,10 +55,11 @@ public class TutorialScreen extends AbstractScreen {
 		layoutconsole = new Actors(0, 0, "Layout\\layoutconsole.png");
 		statslayout = new Actors(0, 668, "Layout\\statslayout.png");
 		map = new Actors(0, 0, "Maps\\tutorial\\1.jpg");
+		mainCharacter = new MainCharacter(400, 450, "CharacterMovement\\walking e0000.png", stage);
 		map2 = new Actors(0,0, "Maps\\tutorial\\2.png");
 		npchouse = new Actors(1600,680,"NPCMovement\\NPCHouse0001.png");
-		console = new Console(600, 270, 25, 40);
-		mainCharacter = new MainCharacter(400, 450, "CharacterMovement\\walking e0000.png", stage);
+		console = new Console(600, 270, 25);
+		
 		stage.addActor(map.image);
 		stage.addActor(mainCharacter.image);
 		stage.addActor(map2.image);

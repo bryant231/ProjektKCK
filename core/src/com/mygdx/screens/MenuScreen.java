@@ -15,7 +15,7 @@ public class MenuScreen extends AbstractScreen {
 	}
 
 	public void create() {
-		console = new Console(600, 210, 230, 60);
+		console = new Console(600, 210, 230);
 		background = new Actors(0, 0, "Menu\\Background.jpg");
 
 		stage.addActor(background.image);
