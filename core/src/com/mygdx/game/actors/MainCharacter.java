@@ -160,8 +160,12 @@ public class MainCharacter extends Actors {
 	}
 	
 public void moveBy(String gdzie,int ile, AbstractButton[] CantStand, int iloscElem) {
+
 		
+	
 		overlaptrue = false;  //flage ustawiamy na nie bo glowna postac nie ma kolizji
+		
+		MoveCountPixels = MoveCountPixels * ile;
 		
 		if (gdzie.equals("gora")) {      //jesli ktos wpisal do gory w konsoli
 			Timer.schedule(new Task() {     //timer + zadanie
@@ -184,7 +188,7 @@ public void moveBy(String gdzie,int ile, AbstractButton[] CantStand, int iloscEl
 							}
 						}, 3);
 					} else {
-						image.setY(image.getY() + 1*ile);    //w przeciwnym wypadku idz o 1 pixel wyzej
+						image.setY(image.getY() + 1);    //w przeciwnym wypadku idz o 1 pixel wyzej
 						changePicture("CharacterMovement\\walking n000"+ruch+".png");
 						ruch++;
 						if (ruch == 8) ruch = 0;
@@ -216,7 +220,7 @@ public void moveBy(String gdzie,int ile, AbstractButton[] CantStand, int iloscEl
 							}
 						}, 3);
 					} else {
-						image.setY(image.getY() - 1*ile);
+						image.setY(image.getY() - 1);
 						changePicture("CharacterMovement\\walking s000"+ruch+".png");
 						ruch++;
 						if (ruch == 8) ruch = 0;
@@ -248,7 +252,7 @@ public void moveBy(String gdzie,int ile, AbstractButton[] CantStand, int iloscEl
 							}
 						}, 3);
 					} else {
-						image.setX(image.getX() - 1*ile);
+						image.setX(image.getX() - 1);
 						changePicture("CharacterMovement\\walking w000"+ruch+".png");
 						ruch++;
 						if (ruch == 8) ruch = 0;
@@ -279,7 +283,7 @@ public void moveBy(String gdzie,int ile, AbstractButton[] CantStand, int iloscEl
 							}
 						}, 3);
 					} else {
-						image.setX(image.getX() + 1*ile);
+						image.setX(image.getX() + 1);
 						changePicture("CharacterMovement\\walking e000"+ruch+".png");
 						ruch++;
 						if (ruch == 8) ruch = 0;
@@ -289,6 +293,7 @@ public void moveBy(String gdzie,int ile, AbstractButton[] CantStand, int iloscEl
 			}, delay, delay, MoveCountPixels);
 
 		}
+		MoveCountPixels = 64;
 	}
 
 	public void updateActorBounds() {

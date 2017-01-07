@@ -31,3 +31,21 @@ orientacja2 -> gory
 orientacja2 -> tylu
 orientacja2 -> przodu
 orientacja3 -> siebie
+Z_Kom -> komunikacja przywitanie
+Z_Kom -> komunikacja pozegnanie
+Z_Kom -> komunikacja liczba_dla_parsera
+komunikacja -> Mow
+komunikacja -> mow
+komunikacja -> Powiedz
+komunikacja -> powiedz
+przywitanie -> Czesc!
+przywitanie -> Czesc
+przywitanie -> czesc
+przywitanie -> Hej!
+przywitanie -> Hej
+przywitanie -> hej
+przywitanie -> Witaj!
+przywitanie -> Witaj
+przywitanie -> witaj
+pozegnanie -> Zegnaj!
+pozegnanie -> Czesc

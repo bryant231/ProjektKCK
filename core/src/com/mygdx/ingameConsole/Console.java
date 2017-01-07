@@ -43,10 +43,11 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFont
 
 public class Console {
 	private String[] TableOfStrings;   //tablica do przechowywania wpisanych stringow
-	private String LastSentenceInConsole;  //ostatni string w konsoli
+	public String LastSentenceInConsole;  //ostatni string w konsoli
 	private TextFieldStyle textFieldStyle; 
 	private BitmapFont bitmapFont;
 	public TextField textField;
+	public Boolean phraseEntereddlaNPC = false;
 	
 	public boolean PhraseEntered = false;   //zmienna ktora stwierdza czy cos zostalo wpisane
 	private int countIN = 0;   //licznik do tablicy aby wyswietlalo ostatnie wpisane stringi
@@ -83,6 +84,7 @@ public class Console {
 					if (countIN>99) countIN = 0;
 					
 					PhraseEntered = true;
+					phraseEntereddlaNPC = true;
 					textField.selectAll();
 					textField.cut();
 					countOUT = countIN;

@@ -11,8 +11,8 @@ import java.text.ParsePosition;
 public class Parserv3{
 	static int Tlines;
 	static int NTlines;
-	static ZasadaGramatykidlaNT[] nttab;
-	static ZasadaGramatyki[] ttab;
+	public static ZasadaGramatykidlaNT[] nttab;
+	public static ZasadaGramatyki[] ttab;
 	
 	public Parserv3() throws IOException{
 		BufferedReader reader = new BufferedReader(new FileReader("Grammar\\gramatyka.txt"));
@@ -409,6 +409,29 @@ public class Parserv3{
 						}
 						break;
 					case "Z_Atakuj":
+						break;
+					case "Z_Kom":
+						zwroc.DodajElementLista_co_zwracam("Z_Kom");
+						String tekst="";
+						for(int ig=0;ig<wynik_przeparsuj.length;ig++){
+							if(wynik_przeparsuj[ig].equals("przywitanie")){
+								tekst = result[ig];
+							}
+						}
+						int liczba2=0;
+						for(int ig=0;ig<wynik_przeparsuj.length;ig++){
+							if(wynik_przeparsuj[ig].equals("liczba_dla_parsera")){
+								liczba2 = ZamienNaInt(result[ig]);
+							}
+						}
+						
+						if(tekst.equals("")){
+							zwroc.UstawCzyLiczba(true);
+							zwroc.UstawLiczba(liczba2);
+						}else{
+							zwroc.DodajElementLista_co_zwracam(tekst);
+						}
+						break;
 				}
 			}
 		}
@@ -436,13 +459,15 @@ public class Parserv3{
 		System.out.println("The sentence is: " + phrase);
 		
 		*/
+
+	
 		/*
 		
 		//Przydatne do debugowania
 		new Parserv3();
 		ZwrocDoScreen wynik = new ZwrocDoScreen();
 		
-		wynik=(Dzialaj("idz w lewo o 3 kratki"));
+		wynik=(Dzialaj("Powiedz Czesc"));
 		
 		for(int i=0;i<wynik.PodajRozmiarLista_co_zwracam();i++){
 			System.out.println(wynik.PodajElementLista_co_zwracam(i));
@@ -450,7 +475,7 @@ public class Parserv3{
 		if(wynik.PodajCzy_liczba_kratek()==true){
 			System.out.println(wynik.PodajLiczba_kratek());
 		}
-		
+
 		*/
 	//}
 }

@@ -8,6 +8,9 @@ public class ZwrocDoScreen {
 	List<String> lista_co_zwracam = new ArrayList<String>();
 	int liczba_kratek=0;
 	Boolean czy_liczba_kratek;
+	//Zrobic liste intow
+	Boolean czy_liczba=false;
+	int liczba=0;
 	
 	//Klasa, której element zwracam do *Screen z Parsera
 	
@@ -40,6 +43,18 @@ public class ZwrocDoScreen {
 	}
 	public Boolean PodajCzy_liczba_kratek(){
 		return czy_liczba_kratek;
+	}
+	public int PodajLiczba(){
+		return liczba;
+	}
+	public void UstawLiczba(int liczba2){
+		liczba = liczba2;
+	}
+	public Boolean PodajCzyLiczba(){
+		return czy_liczba;
+	}
+	public void UstawCzyLiczba(Boolean czy){
+		czy_liczba = czy;
 	}
 	
 }
