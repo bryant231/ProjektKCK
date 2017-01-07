@@ -42,6 +42,7 @@ public class Console {
 	private BitmapFont bitmapFont;
 	public TextField textField;
 	public Boolean phraseEntereddlaNPC = false;
+	public Boolean EnterClickedforNPC = false;
 	
 	public boolean PhraseEntered = false;   //zmienna ktora stwierdza czy cos zostalo wpisane
 	private int countIN = 0;   //licznik do tablicy aby wyswietlalo ostatnie wpisane stringi
@@ -79,6 +80,7 @@ public class Console {
 					
 					PhraseEntered = true;
 					phraseEntereddlaNPC = true;
+					EnterClickedforNPC = true;
 					textField.selectAll();
 					textField.cut();
 					countOUT = countIN;
