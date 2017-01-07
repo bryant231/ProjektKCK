@@ -6,6 +6,7 @@ import java.util.List;
 public class ZwrocDoScreen {
 	//Tu chyba mozna zamienic liste na tablice
 	List<String> lista_co_zwracam = new ArrayList<String>();
+	// 1 element - typ zdania
 	int liczba_kratek=0;
 	Boolean czy_liczba_kratek;
 	//Zrobic liste intow

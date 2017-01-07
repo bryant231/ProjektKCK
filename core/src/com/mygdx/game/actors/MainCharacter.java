@@ -1,5 +1,7 @@
 package com.mygdx.game.actors;
 
+import java.util.Vector;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
@@ -9,6 +11,7 @@ import com.badlogic.gdx.utils.Timer.Task;
 import com.mygdx.game.Buttons.AbstractButton;
 import com.mygdx.game.Cloud.Statistics;
 import com.mygdx.game.Cloud.cloud;
+import com.mygdx.game.actors.Enemy;
 
 public class MainCharacter extends Actors {
 	private float delay = (float) 0.005;   //ile opoznienia miedzy ruchami
@@ -18,6 +21,7 @@ public class MainCharacter extends Actors {
 	public Statistics[] statistics;      //tablica[4] statystyk 
 	private Stage stage;                  
 	public boolean overlaptrue = false;   //flaga do kolizji
+	Boolean CanAttack = false;
 	
 	int ruch = 0;
 
@@ -27,7 +31,7 @@ public class MainCharacter extends Actors {
 		init(X, Y);
 	}
 
-	public void move(String gdzie, final AbstractButton[] CantStand, final int iloscElem) {
+	public void move(String gdzie, AbstractButton[] CantStand, int iloscElem) {
 		
 		overlaptrue = false;  //flage ustawiamy na nie bo glowna postac nie ma kolizji
 		
@@ -161,8 +165,6 @@ public class MainCharacter extends Actors {
 	
 public void moveBy(String gdzie,int ile, AbstractButton[] CantStand, int iloscElem) {
 
-		
-	
 		overlaptrue = false;  //flage ustawiamy na nie bo glowna postac nie ma kolizji
 		
 		MoveCountPixels = MoveCountPixels * ile;
@@ -300,6 +302,17 @@ public void moveBy(String gdzie,int ile, AbstractButton[] CantStand, int iloscEl
 		bounds.set(image.getX()+28, image.getY()+19, 44, 56);
 		Cloud.setPosition(bounds.getX()+40 + 35, bounds.getY() +19 + 44);
 	}
+	
+	public void SetCanAttack(Boolean a){
+		CanAttack = a;
+	}
+	
+	public Boolean GetCanAttack(){
+		return CanAttack;
+	}
+	
+	
+
 
 	public void updateStatistics() {
 		statistics[0].textField.setMessageText(statistics[0].getStatistic());

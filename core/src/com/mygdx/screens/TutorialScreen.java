@@ -5,6 +5,7 @@ import com.mygdx.game.ProjektKCK;
 import com.mygdx.game.Buttons.AbstractButton;
 import com.mygdx.game.Cloud.cloud;
 import com.mygdx.game.actors.Actors;
+import com.mygdx.game.actors.Enemy;
 import com.mygdx.game.actors.MainCharacter;
 import com.mygdx.game.actors.NPC;
 import com.mygdx.game.parserCYK.Parserv3;
@@ -25,6 +26,7 @@ public class TutorialScreen extends AbstractScreen {
 	public Actors npchouse;				//dodajemy domek NPCta - test
 	public Parserv3 Parser1;
 	public NPC npc1;
+	public Enemy enemy1;
 	
 	public TutorialScreen(ProjektKCK game) throws IOException {
 		super(game);
@@ -74,13 +76,19 @@ public class TutorialScreen extends AbstractScreen {
 							mainCharacter.moveBy(wynik.PodajElementLista_co_zwracam(1), wynik.PodajLiczba_kratek(), CantStand , ilosc_elemt_w_tablicy_przeszkod);
 						}
 						break;
-					//case "Z_Atakuj":
+					case "Z_Atakuj":
+						mainCharacter.SetCanAttack(true);
+						enemy1.SetUsedWord(wynik.PodajElementLista_co_zwracam(1));
+						CanAttackNpc();
+						
+						break;
 					case "Z_Kom":
 						if(wynik.PodajCzyLiczba() == false){
 							mainCharacter.Speak(wynik.PodajElementLista_co_zwracam(1));
 						}else{
 							mainCharacter.Speak(Integer.toString(wynik.PodajLiczba()));
 						}
+						break;
 				}
 			}
 			
@@ -116,11 +124,13 @@ public class TutorialScreen extends AbstractScreen {
 		console = new Console(600, 270, 25, 40);
 		mainCharacter = new MainCharacter(400, 450, "CharacterMovement\\walking e0000.png", stage);
 
+		enemy1 = new Enemy("NPC", 1650,350,"NPCMovement\\stopped0000.png",this.stage,this.console,this.Parser1,1600,300, 200, 140);
 		npc1 = new NPC("NPC", 1650,650,"NPCMovement\\stopped0000.png",this.stage,this.console,this.Parser1,1600,600, 200, 140);
 
 		stage.addActor(map.image);
 		stage.addActor(map2.image);
 		stage.addActor(npchouse.image);
+		stage.addActor(enemy1.image);
 		stage.addActor(npc1.image);
 		stage.addActor(mainCharacter.image);
 		stage.addActor(layoutconsole.image);
@@ -156,5 +166,9 @@ public class TutorialScreen extends AbstractScreen {
 		//npc1.testPlayer();
 
 	}
-	
+	public void CanAttackNpc(){
+		enemy1.collisionCheck(mainCharacter.bounds);
+		if(mainCharacter.GetCanAttack() == true)
+			enemy1.IsHitbyMC();
+	}
 }

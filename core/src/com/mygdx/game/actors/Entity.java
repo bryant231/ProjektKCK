@@ -19,8 +19,8 @@ public abstract class Entity extends Actors{
 	protected Parserv3 Parser;
 	protected Console console;
 	Random generator;
-	protected boolean MainCharacertInside = false;
-	protected String Type = "";
+	protected boolean MainCharacterInside;
+	protected String Type;
 
 	public Entity(String Type,int X, int Y, String sciezka , Stage stage, Console console, Parserv3 parser , int a , int b , int c , int d) throws IOException {
 		super(X, Y, sciezka);
@@ -30,17 +30,26 @@ public abstract class Entity extends Actors{
 		button = new AbstractButton(a,b,c,d);  //1600,600, 200, 140
 		button.button.setDebug(true);
 		generator = new Random();
+		MainCharacterInside = false;
 		stage.addActor(button.button);
 		this.Type = Type;
 		// TODO Auto-generated constructor stub
 	}
 	
+	public boolean isMainCharacterInside() {
+		return MainCharacterInside;
+	}
+
+	public void setMainCharacterInside(boolean mainCharacterInside) {
+		MainCharacterInside = mainCharacterInside;
+	}
+
 	public void collisionCheck(Rectangle rectangle) {
 		if (button.bounds.overlaps(rectangle)) {
-			this.MainCharacertInside = true;
+			this.MainCharacterInside = true;
 		}
 		else
-			this.MainCharacertInside = false;
+			this.MainCharacterInside = false;
 	}
 	
 	

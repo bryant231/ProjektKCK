@@ -35,12 +35,6 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFont
 
 
 
-/*Czcionka*/
-
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFontParameter;
-
-
 public class Console {
 	private String[] TableOfStrings;   //tablica do przechowywania wpisanych stringow
 	public String LastSentenceInConsole;  //ostatni string w konsoli
@@ -152,25 +146,6 @@ public class Console {
 	}
 	
 
-//<<<<<<< HEAD
-	private BitmapFont font;
-
-	public void bitMapFontInit() {
-		bitmapFont = new BitmapFont();
-		setFontToTimesNewRoman();
-		bitmapFont = font;
-	}
-	
-	
-	public void setFontToTimesNewRoman()
-	{
-		font = new BitmapFont();
-		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("Times_New_Roman_Normal.ttf"));
-		FreeTypeFontParameter parameter = new FreeTypeFontParameter();
-		parameter.size = 60;
-		font = generator.generateFont(parameter);
-	}
-//=======
 	public void bitMapFontInit(int size) {
 		bitmapFont = new BitmapFont();
 		generator = new FreeTypeFontGenerator(Gdx.files.internal("TimesNewRoman.ttf"));
@@ -182,7 +157,6 @@ public class Console {
 	
 	public void setPosition(float X, float Y) {
 		textField.setPosition(X, Y);
-//>>>>>>> refs/remotes/origin/master
 	}
 
 }

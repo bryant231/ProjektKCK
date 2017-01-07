@@ -256,8 +256,8 @@ public class Parserv3{
 				System.out.print(tablica[i] + " ");
 		}
 		System.out.println();
-		
 		*/
+		
 		
 		/*
 		//Stwierdza czy zdanie jest w gramatyce
@@ -409,6 +409,14 @@ public class Parserv3{
 						}
 						break;
 					case "Z_Atakuj":
+						zwroc.DodajElementLista_co_zwracam("Z_Atakuj");
+						String tekst2="";
+						for(int ig=0;ig<wynik_przeparsuj.length;ig++){
+							if(wynik_przeparsuj[ig].equals("czasownik2")){
+								tekst2 = result[ig];
+							}
+						}
+						zwroc.DodajElementLista_co_zwracam(tekst2);
 						break;
 					case "Z_Kom":
 						zwroc.DodajElementLista_co_zwracam("Z_Kom");
@@ -461,13 +469,13 @@ public class Parserv3{
 		*/
 
 	
-		/*
+	/*	
 		
 		//Przydatne do debugowania
 		new Parserv3();
 		ZwrocDoScreen wynik = new ZwrocDoScreen();
 		
-		wynik=(Dzialaj("Powiedz Czesc"));
+		wynik=(Dzialaj("atakuj orka"));
 		
 		for(int i=0;i<wynik.PodajRozmiarLista_co_zwracam();i++){
 			System.out.println(wynik.PodajElementLista_co_zwracam(i));
@@ -475,7 +483,8 @@ public class Parserv3{
 		if(wynik.PodajCzy_liczba_kratek()==true){
 			System.out.println(wynik.PodajLiczba_kratek());
 		}
-
+		
 		*/
+		
 	//}
 }

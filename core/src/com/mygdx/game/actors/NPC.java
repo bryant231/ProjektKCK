@@ -25,7 +25,7 @@ public class NPC extends Entity{
 		int licznik=0;
 	
 		
-		if(MainCharacertInside == true){
+		if(MainCharacterInside == true){
 			if(console.phraseEntereddlaNPC == true){
 				console.phraseEntereddlaNPC = false;
 				for(int i=0;i<Parserv3.ttab.length;i++){
