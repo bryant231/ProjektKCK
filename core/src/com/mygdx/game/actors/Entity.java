@@ -19,20 +19,10 @@ public abstract class Entity extends Actors {
 	protected Parserv3 Parser;
 	protected Console console;
 	Random generator;
-<<<<<<< HEAD
-<<<<<<< HEAD
 	protected boolean MainCharacterInside;
 	protected String Type;
-=======
-	protected boolean MainCharacertInside = false;
-	protected String Type = "";
-=======
-	protected boolean MainCharacterInside;
-	protected String Type;
->>>>>>> refs/remotes/origin/master
 	public boolean przywitanie = false;
 	public float iloscCzasuTimer = 3;
->>>>>>> refs/remotes/origin/master
 
 	public Entity(String Type, int X, int Y, String sciezka, Stage stage, Console console, Parserv3 parser, int a,
 			int b, int c, int d) throws IOException {
@@ -43,32 +33,11 @@ public abstract class Entity extends Actors {
 		button = new AbstractButton(a, b, c, d); // 1600,600, 200, 140
 		button.button.setDebug(true);
 		generator = new Random();
-<<<<<<< HEAD
-		MainCharacterInside = false;
-=======
 		MainCharacterInside = true;
->>>>>>> refs/remotes/origin/master
 		stage.addActor(button.button);
 		this.Type = Type;
 		// TODO Auto-generated constructor stub
 	}
-<<<<<<< HEAD
-	
-	public boolean isMainCharacterInside() {
-		return MainCharacterInside;
-	}
-
-	public void setMainCharacterInside(boolean mainCharacterInside) {
-		MainCharacterInside = mainCharacterInside;
-	}
-
-	public void collisionCheck(Rectangle rectangle) {
-		if (button.bounds.overlaps(rectangle)) {
-			this.MainCharacterInside = true;
-		}
-		else
-			this.MainCharacterInside = false;
-=======
 
 	public void collisionCheck(Rectangle rectangle) {
 		if (button.bounds.overlaps(rectangle)) {
@@ -77,7 +46,6 @@ public abstract class Entity extends Actors {
 		} else
 			this.MainCharacterInside = false;
 			przywitanie = false;
->>>>>>> refs/remotes/origin/master
 	}
 
 	public void Speak(String text) {

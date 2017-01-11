@@ -18,22 +18,7 @@ public class NPC extends Entity {
 		// TODO Auto-generated constructor stub
 	}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-	
-	public void sayHello(){
-		
-		Boolean mcSaidHello=false;
-		
-		int licznik=0;
-	
-		
-		if(MainCharacterInside == true){
-			if(console.phraseEntereddlaNPC == true){
-=======
-=======
 
->>>>>>> refs/remotes/origin/master
 	public void sayHello() {
 
 		Boolean mcSaidHello = false;
@@ -42,7 +27,6 @@ public class NPC extends Entity {
 
 		if (MainCharacterInside == true) {
 			if (console.phraseEntereddlaNPC == true) {
->>>>>>> refs/remotes/origin/master
 				console.phraseEntereddlaNPC = false;
 				for (int i = 0; i < Parserv3.ttab.length; i++) {
 					if (Parserv3.ttab[i].PodajLS().equals("przywitanie")) {

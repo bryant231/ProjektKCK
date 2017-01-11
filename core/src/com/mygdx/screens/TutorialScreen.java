@@ -4,7 +4,6 @@ import java.io.IOException;
 import com.mygdx.game.ProjektKCK;
 import com.mygdx.game.Buttons.AbstractButton;
 import com.mygdx.game.actors.Actors;
-import com.mygdx.game.actors.Enemy;
 import com.mygdx.game.actors.MainCharacter;
 import com.mygdx.game.actors.StartowyNPC;
 import com.mygdx.game.parserCYK.Parserv3;
@@ -27,15 +26,9 @@ public class TutorialScreen extends AbstractScreen {
 	public AbstractButton CantStand[]; // tablica w ktorej sa obiekty do kolizji
 	
 	public Parserv3 Parser1;
-<<<<<<< HEAD
-	public NPC npc1;
-	public Enemy enemy1;
-	
-=======
 	public StartowyNPC npc1;
 	public Enemy enemy1;
 
->>>>>>> refs/remotes/origin/master
 	public TutorialScreen(ProjektKCK game) throws IOException {
 		super(game);
 		create();
@@ -113,32 +106,6 @@ public class TutorialScreen extends AbstractScreen {
 
 			if (wynik.PodajRozmiarLista_co_zwracam() == 0) {
 				mainCharacter.Speak("Nie rozumiem Cie!");
-<<<<<<< HEAD
-			}else{
-				switch(wynik.PodajElementLista_co_zwracam(0)){
-					case "Z_Idz":
-						//System.out.println(wynik.PodajCzy_liczba_kratek());
-						if(wynik.PodajCzy_liczba_kratek() == false){
-							mainCharacter.move(wynik.PodajElementLista_co_zwracam(1), CantStand , ilosc_elemt_w_tablicy_przeszkod);
-						}else{
-							//System.out.println(wynik.PodajLiczba_kratek());
-							mainCharacter.moveBy(wynik.PodajElementLista_co_zwracam(1), wynik.PodajLiczba_kratek(), CantStand , ilosc_elemt_w_tablicy_przeszkod);
-						}
-						break;
-					case "Z_Atakuj":
-						mainCharacter.SetCanAttack(true);
-						enemy1.SetUsedWord(wynik.PodajElementLista_co_zwracam(1));
-						CanAttackNpc();
-						
-						break;
-					case "Z_Kom":
-						if(wynik.PodajCzyLiczba() == false){
-							mainCharacter.Speak(wynik.PodajElementLista_co_zwracam(1));
-						}else{
-							mainCharacter.Speak(Integer.toString(wynik.PodajLiczba()));
-						}
-						break;
-=======
 			} else {
 				switch (wynik.PodajElementLista_co_zwracam(0)) {
 				case "Z_Idz":
@@ -163,11 +130,7 @@ public class TutorialScreen extends AbstractScreen {
 					} else {
 						mainCharacter.Speak(Integer.toString(wynik.PodajLiczba()));
 					}
-<<<<<<< HEAD
->>>>>>> refs/remotes/origin/master
-=======
 					break;
->>>>>>> refs/remotes/origin/master
 				}
 			}
 
@@ -184,33 +147,6 @@ public class TutorialScreen extends AbstractScreen {
 	}
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-		enemy1 = new Enemy("NPC", 1650,350,"NPCMovement\\stopped0000.png",this.stage,this.console,this.Parser1,1600,300, 200, 140);
-		npc1 = new NPC("NPC", 1650,650,"NPCMovement\\stopped0000.png",this.stage,this.console,this.Parser1,1600,600, 200, 140);
-=======
-		npc1 = new StartowyNPC("NPC", 1650, 650, "NPCMovement\\stopped0000.png", this.stage, this.console, this.Parser1,
-				1600, 600, 200, 140);
->>>>>>> refs/remotes/origin/master
-
-		stage.addActor(map.image);
-		stage.addActor(map2.image);
-		stage.addActor(npchouse.image);
-		stage.addActor(enemy1.image);
-		stage.addActor(npc1.image);
-		stage.addActor(mainCharacter.image);
-		stage.addActor(layoutconsole.image);
-		stage.addActor(console.textField);
-		stage.addActor(statslayout.image);
-		stage.addActor(mainCharacter.statistics[0].textField);
-		stage.addActor(mainCharacter.statistics[1].textField);
-		stage.addActor(mainCharacter.statistics[2].textField);
-		stage.addActor(mainCharacter.statistics[3].textField);
-		stage.act();
-
-	}
-=======
->>>>>>> refs/remotes/origin/master
 
 	public void CantStandInit() {
 		CantStand[0] = new AbstractButton(289, 320, 32, 32);
@@ -237,13 +173,5 @@ public class TutorialScreen extends AbstractScreen {
 		if(mainCharacter.GetCanAttack() == true)
 			enemy1.IsHitbyMC();
 	}
-<<<<<<< HEAD
-	public void CanAttackNpc(){
-		enemy1.collisionCheck(mainCharacter.bounds);
-		if(mainCharacter.GetCanAttack() == true)
-			enemy1.IsHitbyMC();
-	}
-=======
 
->>>>>>> refs/remotes/origin/master
 }
