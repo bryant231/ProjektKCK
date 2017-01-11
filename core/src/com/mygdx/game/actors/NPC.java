@@ -19,6 +19,7 @@ public class NPC extends Entity {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 	public void sayHello(){
 		
@@ -30,13 +31,16 @@ public class NPC extends Entity {
 		if(MainCharacterInside == true){
 			if(console.phraseEntereddlaNPC == true){
 =======
+=======
+
+>>>>>>> refs/remotes/origin/master
 	public void sayHello() {
 
 		Boolean mcSaidHello = false;
 
 		int licznik = 0;
 
-		if (MainCharacertInside == true) {
+		if (MainCharacterInside == true) {
 			if (console.phraseEntereddlaNPC == true) {
 >>>>>>> refs/remotes/origin/master
 				console.phraseEntereddlaNPC = false;
@@ -48,6 +52,7 @@ public class NPC extends Entity {
 						}
 					}
 				}
+
 				int l = 0;
 				if (mcSaidHello == true) {
 					mcSaidHello = false;
@@ -69,9 +74,8 @@ public class NPC extends Entity {
 					// Losuje liczbe
 					wyl = generator.nextInt(licznik);
 					
-							this.Speak(temptab[wyl]);
+					this.Speak(temptab[wyl]);
 						
-					
 					przywitanie = true;
 				}
 			}

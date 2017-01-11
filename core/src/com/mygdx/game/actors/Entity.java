@@ -20,11 +20,16 @@ public abstract class Entity extends Actors {
 	protected Console console;
 	Random generator;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	protected boolean MainCharacterInside;
 	protected String Type;
 =======
 	protected boolean MainCharacertInside = false;
 	protected String Type = "";
+=======
+	protected boolean MainCharacterInside;
+	protected String Type;
+>>>>>>> refs/remotes/origin/master
 	public boolean przywitanie = false;
 	public float iloscCzasuTimer = 3;
 >>>>>>> refs/remotes/origin/master
@@ -38,7 +43,11 @@ public abstract class Entity extends Actors {
 		button = new AbstractButton(a, b, c, d); // 1600,600, 200, 140
 		button.button.setDebug(true);
 		generator = new Random();
+<<<<<<< HEAD
 		MainCharacterInside = false;
+=======
+		MainCharacterInside = true;
+>>>>>>> refs/remotes/origin/master
 		stage.addActor(button.button);
 		this.Type = Type;
 		// TODO Auto-generated constructor stub
@@ -63,10 +72,10 @@ public abstract class Entity extends Actors {
 
 	public void collisionCheck(Rectangle rectangle) {
 		if (button.bounds.overlaps(rectangle)) {
-			this.MainCharacertInside = true;
+			this.MainCharacterInside = true;
 			
 		} else
-			this.MainCharacertInside = false;
+			this.MainCharacterInside = false;
 			przywitanie = false;
 >>>>>>> refs/remotes/origin/master
 	}

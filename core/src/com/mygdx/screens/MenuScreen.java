@@ -17,7 +17,7 @@ public class MenuScreen extends AbstractScreen {
 	}
 
 	public void create() {
-		console = new Console(600, 210, 230, 60);
+		console = new Console(600, 210, 230, 1);
 		background = new Actors(0, 0, "Menu\\Background.jpg");
 
 		stage.addActor(background.image);
@@ -42,7 +42,7 @@ public class MenuScreen extends AbstractScreen {
 	}
 
 	public void ConsoleCommendsMenuScreen(String commend) {
-		if (commend.equals("rozpocznij"))
+		if (commend.equals("rozpocznij")|commend.equals("Rozpocznij"))
 			try {
 				dispose();
 				game.setScreen(new TutorialScreen(game));

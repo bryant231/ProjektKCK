@@ -10,6 +10,7 @@ import com.mygdx.game.actors.StartowyNPC;
 import com.mygdx.game.parserCYK.Parserv3;
 import com.mygdx.game.parserCYK.ZwrocDoScreen;
 import com.mygdx.ingameConsole.Console;
+import com.mygdx.game.actors.Enemy;
 
 public class TutorialScreen extends AbstractScreen {
 
@@ -24,7 +25,7 @@ public class TutorialScreen extends AbstractScreen {
 	public Actors map; // mapa danej planszy
 	public Actors map2;
 	public AbstractButton CantStand[]; // tablica w ktorej sa obiekty do kolizji
-	public Actors npchouse; // dodajemy domek NPCta - test
+	
 	public Parserv3 Parser1;
 <<<<<<< HEAD
 	public NPC npc1;
@@ -32,11 +33,51 @@ public class TutorialScreen extends AbstractScreen {
 	
 =======
 	public StartowyNPC npc1;
+	public Enemy enemy1;
 
 >>>>>>> refs/remotes/origin/master
 	public TutorialScreen(ProjektKCK game) throws IOException {
 		super(game);
 		create();
+	}
+	
+	public void create() throws IOException {
+		try {
+			Parser1 = new Parserv3();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		CantStand = new AbstractButton[ilosc_elemt_w_tablicy_przeszkod];
+		CantStandInit();
+		for (int i = 0; i < ilosc_elemt_w_tablicy_przeszkod; i++) {
+			stage.addActor(CantStand[i].button);
+		}
+		layoutconsole = new Actors(0, 0, "Layout\\layoutconsole.png");
+		statslayout = new Actors(0, 668, "Layout\\statslayout.png");
+		map = new Actors(0, 0, "Maps\\tutorial\\1.jpg");
+		map2 = new Actors(0, 0, "Maps\\tutorial\\2.png");
+		console = new Console(600, 270, 25, 1);
+		mainCharacter = new MainCharacter(432, 450, "CharacterMovement\\walking e0000.png", stage);
+
+		npc1 = new StartowyNPC("NPC", 1650, 560, "NPCMovement\\stopped0000.png", this.stage, this.console, this.Parser1,
+				1600, 500, 200, 140);
+		enemy1 = new Enemy("NPC", 1650,350,"NPCMovement\\stopped0000.png",this.stage,this.console,this.Parser1,1600,300, 200, 140);
+		
+		stage.addActor(map.image);
+		stage.addActor(map2.image);
+		stage.addActor(npc1.image);
+		stage.addActor(enemy1.image);
+		stage.addActor(mainCharacter.image);
+		stage.addActor(layoutconsole.image);
+		stage.addActor(console.textField);
+		stage.addActor(statslayout.image);
+		stage.addActor(mainCharacter.statistics[0].textField);
+		stage.addActor(mainCharacter.statistics[1].textField);
+		stage.addActor(mainCharacter.statistics[2].textField);
+		stage.addActor(mainCharacter.statistics[3].textField);
+		stage.act();
+
 	}
 
 	@Override
@@ -111,13 +152,21 @@ public class TutorialScreen extends AbstractScreen {
 								CantStand, ilosc_elemt_w_tablicy_przeszkod);
 					}
 					break;
-				// case "Z_Atakuj":
+				case "Z_Atakuj":
+					mainCharacter.SetCanAttack(true);
+					enemy1.SetUsedWord(wynik.PodajElementLista_co_zwracam(1));
+					CanAttackNpc();
+					break;
 				case "Z_Kom":
 					if (wynik.PodajCzyLiczba() == false) {
 						mainCharacter.Speak(wynik.PodajElementLista_co_zwracam(1));
 					} else {
 						mainCharacter.Speak(Integer.toString(wynik.PodajLiczba()));
 					}
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/master
+=======
+					break;
 >>>>>>> refs/remotes/origin/master
 				}
 			}
@@ -134,26 +183,8 @@ public class TutorialScreen extends AbstractScreen {
 
 	}
 
-	public void create() throws IOException {
-		try {
-			Parser1 = new Parserv3();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		CantStand = new AbstractButton[ilosc_elemt_w_tablicy_przeszkod];
-		CantStandInit();
-		for (int i = 0; i < ilosc_elemt_w_tablicy_przeszkod; i++) {
-			stage.addActor(CantStand[i].button);
-		}
-		layoutconsole = new Actors(0, 0, "Layout\\layoutconsole.png");
-		statslayout = new Actors(0, 668, "Layout\\statslayout.png");
-		map = new Actors(0, 0, "Maps\\tutorial\\1.jpg");
-		map2 = new Actors(0, 0, "Maps\\tutorial\\2.png");
-		npchouse = new Actors(1600, 680, "NPCMovement\\NPCHouse0001.png");
-		console = new Console(600, 270, 25, 40);
-		mainCharacter = new MainCharacter(400, 450, "CharacterMovement\\walking e0000.png", stage);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 		enemy1 = new Enemy("NPC", 1650,350,"NPCMovement\\stopped0000.png",this.stage,this.console,this.Parser1,1600,300, 200, 140);
 		npc1 = new NPC("NPC", 1650,650,"NPCMovement\\stopped0000.png",this.stage,this.console,this.Parser1,1600,600, 200, 140);
@@ -178,6 +209,8 @@ public class TutorialScreen extends AbstractScreen {
 		stage.act();
 
 	}
+=======
+>>>>>>> refs/remotes/origin/master
 
 	public void CantStandInit() {
 		CantStand[0] = new AbstractButton(289, 320, 32, 32);
@@ -197,9 +230,12 @@ public class TutorialScreen extends AbstractScreen {
 	public void CanTalkWithNpc() {
 		npc1.collisionCheck(mainCharacter.bounds);
 		npc1.sayHello();
-
 		npc1.rozmowa();
-
+	}
+	public void CanAttackNpc(){
+		enemy1.collisionCheck(mainCharacter.bounds);
+		if(mainCharacter.GetCanAttack() == true)
+			enemy1.IsHitbyMC();
 	}
 <<<<<<< HEAD
 	public void CanAttackNpc(){

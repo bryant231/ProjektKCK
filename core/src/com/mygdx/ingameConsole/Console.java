@@ -9,8 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.mygdx.ingameConsole.Console;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField.TextFieldStyle;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFontParameter;
+
 
 
 
@@ -48,8 +47,6 @@ public class Console {
 	private int countIN = 0;   //licznik do tablicy aby wyswietlalo ostatnie wpisane stringi
 	private int countOUT = 0;  // to samo co up
 	
-	private FreeTypeFontGenerator generator;
-	private FreeTypeFontParameter parameter;
 	
 	
 	public Console( int WIDTH , float X , float Y, int size) {
@@ -149,12 +146,8 @@ public class Console {
 	
 
 	public void bitMapFontInit(int size) {
-		bitmapFont = new BitmapFont();
-		generator = new FreeTypeFontGenerator(Gdx.files.internal("TimesNewRoman.ttf"));
-		parameter = new FreeTypeFontParameter();
-		parameter.size = size;
-		bitmapFont = generator.generateFont(parameter);
-		generator.dispose();
+		bitmapFont = new BitmapFont(Gdx.files.internal("Font/BIGFONT.fnt"));
+		bitmapFont.getData().setScale(size);
 	}
 	
 	public void setPosition(float X, float Y) {
