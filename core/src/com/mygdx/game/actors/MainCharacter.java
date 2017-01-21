@@ -20,6 +20,7 @@ public class MainCharacter extends Actors {
 	public boolean overlaptrue = false; // flaga do kolizji
 	Boolean CanAttack = false; //czy moze zaatakowac
 	int ruch = 0;
+	static String mc_state;
 	
 	public MainCharacter(int X, int Y, String sciezka, Stage stage) {
 		super(X, Y, sciezka);
@@ -360,6 +361,7 @@ public class MainCharacter extends Actors {
 	}
 
 	public void init(int X, int Y) {
+		mc_state = "podroznik";
 		TryBounds = new Rectangle();
 		Cloud = new cloud(50, X + 35, Y + 20,1);
 		statistics = new Statistics[4];
@@ -413,5 +415,12 @@ public class MainCharacter extends Actors {
 			
 	public Boolean GetCanAttack(){
 		return CanAttack;
+	}
+	public static void SetMcState(String b){
+		mc_state = b;
+	
+	}
+	public static String GetMcState(){
+		return mc_state;
 	}
 }

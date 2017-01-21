@@ -26,6 +26,7 @@ public class Enemy extends Entity {
 	{	
 		if(MainCharacterInside == true)
 		{
+			MainCharacter.SetMcState("walka");
 			NumberOfAttacks++;
 			list_of_words.add(LastWordUsed);
 				for (int i = 0; i < list_of_words.size()-1; i++)	
@@ -42,6 +43,7 @@ public class Enemy extends Entity {
 		if (CurrentHP < 0)
 		{
 			defeat();
+			MainCharacter.SetMcState("podroznik");
 		}
 	}
 	

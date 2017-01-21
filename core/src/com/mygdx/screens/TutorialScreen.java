@@ -28,6 +28,7 @@ public class TutorialScreen extends AbstractScreen {
 	public Parserv3 Parser1;
 	public StartowyNPC npc1;
 	public Enemy enemy1;
+	String fraza = new String();
 	
 	public TutorialScreen(ProjektKCK game) throws IOException {
 		super(game);
@@ -86,9 +87,114 @@ public class TutorialScreen extends AbstractScreen {
 	}
 
 	private void whatToDo() {
+		switch(MainCharacter.GetMcState()){
+		
+		case "walka":
+			McIsFighting();
+			break;
+		
+		case "rozmowa":
+			McIsTalking();
+			break;	
+		
+		case "podroznik":
+			McIsTraveling();
+			break;
+		}
+	}
+
+	@Override
+	public void resize(int width, int height) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void McIsFighting(){
 		if (console.PhraseEntered == true) {
 
-			String fraza = new String();
+			fraza = console.GetText();
+			
+			// Tablica zwracana przez parser
+			ZwrocDoScreen wynik = new ZwrocDoScreen();
+			fraza = fraza.toLowerCase();
+			try {
+				wynik = Parserv3.Dzialaj(fraza);
+			} catch (IOException e) {
+				System.out.println("Popsules nasza gre");
+			}
+
+			// Wyswietla w konsoli co zwraca parser (czy fraza jest zdaniem czy
+			// nie).
+			// Jesli jest to wyswietla tez jego typ
+			// System.out.println(wynik[0]);
+
+			if (wynik.PodajRozmiarLista_co_zwracam() == 0) {
+				mainCharacter.Speak("Nie rozumiem Cie!");
+			} else {
+				
+				switch (wynik.PodajElementLista_co_zwracam(0)) {
+				case "Z_Idz":
+					mainCharacter.Speak("Nie mogę uciec z pola walki!");
+					break;
+				case "Z_Atakuj":
+					mainCharacter.SetCanAttack(true);
+					CanAttackNpc(wynik);
+					break;
+				case "Z_Kom":
+					mainCharacter.Speak("Nie mogę teraz rozmawiać, bo walczę z przeciwnikiem!");
+					break;
+				}
+			}
+			console.PhraseEntered = false;
+		}
+	}
+	
+	public void McIsTalking(){
+		if (console.PhraseEntered == true) {
+			
+			fraza = console.GetText();
+			
+			// Tablica zwracana przez parser
+			ZwrocDoScreen wynik = new ZwrocDoScreen();
+			fraza = fraza.toLowerCase();
+			try {
+				wynik = Parserv3.Dzialaj(fraza);
+			} catch (IOException e) {
+				System.out.println("Popsules nasza gre");
+			}
+
+			// Wyswietla w konsoli co zwraca parser (czy fraza jest zdaniem czy
+			// nie).
+			// Jesli jest to wyswietla tez jego typ
+			// System.out.println(wynik[0]);
+
+			if (wynik.PodajRozmiarLista_co_zwracam() == 0) {
+				mainCharacter.Speak("Nie rozumiem Cie!");
+			} else {
+				switch (wynik.PodajElementLista_co_zwracam(0)) {
+				case "Z_Idz":
+					mainCharacter.Speak("Nie mogę się ruszyć, bo rozmawiam z NPC");
+					break;
+				case "Z_Atakuj":
+					mainCharacter.Speak("Nie mogę się atakować, bo rozmawiam z NPC");
+					break;
+				case "Z_Kom":
+					if (wynik.PodajCzyLiczba() == false) {
+						mainCharacter.Speak(wynik.PodajElementLista_co_zwracam(1));
+					} else {
+						mainCharacter.Speak(Integer.toString(wynik.PodajLiczba()));
+					}
+					break;
+				}
+			}
+			console.PhraseEntered = false;
+		}
+		
+	}
+	
+	public void McIsTraveling(){
+		if (console.PhraseEntered == true) {
+
 			fraza = console.GetText();
 			
 			// Tablica zwracana przez parser
@@ -134,20 +240,10 @@ public class TutorialScreen extends AbstractScreen {
 					break;
 				}
 			}
-
 			console.PhraseEntered = false;
-
 		}
-
+		
 	}
-
-	@Override
-	public void resize(int width, int height) {
-		// TODO Auto-generated method stub
-
-	}
-
-
 
 	public void CantStandInit() {
 		CantStand[0] = new AbstractButton(289, 320, 32, 32);
@@ -168,6 +264,7 @@ public class TutorialScreen extends AbstractScreen {
 		npc1.collisionCheck(mainCharacter.bounds);
 		npc1.rozmowa();
 	}
+	
 	public void CanAttackNpc(ZwrocDoScreen wynik){
 		enemy1.collisionCheck(mainCharacter.bounds);
 		if(mainCharacter.GetCanAttack() == true)

@@ -35,7 +35,7 @@ public class NPC extends Entity {
 				
 				if(wynik.PodajElementLista_co_zwracam(0).equals("Z_Kom") 
 				   && wynik.PodajElementLista_co_zwracam(2).equals("przywitanie")){
-
+					MainCharacter.SetMcState("rozmowa");
 					int l = 0;
 					// Licze ile jest przywitan
 					for (int g = 0; g < Parserv3.ttab.length; g++) {
@@ -61,6 +61,36 @@ public class NPC extends Entity {
 				}
 			}
 		}
+	}
+	public void sayBye() {
+
+		int licznik = 0;
+
+		if (MainCharacterInside == true) {
+	
+				int l = 0;
+				// Licze ile jest pozegnan
+				for (int g = 0; g < Parserv3.ttab.length; g++) {
+					if (Parserv3.ttab[g].PodajLS().equals("pozegnanie")) {
+						licznik++;
+					}
+				}
+				// Wpisuje pozegnania do tablicy
+				String[] temptab = new String[licznik];
+				for (int h = 0; h < Parserv3.ttab.length; h++) {
+					if (Parserv3.ttab[h].PodajLS().equals("pozegnanie")) {
+						temptab[l] = Parserv3.ttab[h].PodajPS();
+						l++;
+					}
+				}
+				int wyl = 0;
+				// Losuje liczbe
+				wyl = generator.nextInt(licznik);
+					
+				this.Speak(temptab[wyl]);
+						
+			}
+		
 	}
 }
 
