@@ -71,9 +71,13 @@ public class Enemy extends Entity {
 	public void displayDamage()
 	{
 		
-		String temp1 = String.valueOf(CurrentHP);
-		String temp2 = String.valueOf(MaxHP);
-		this.Speak(temp1 + "/" + temp2,(float) 0.001);
+        String temp1 = String.valueOf(CurrentHP);
+        if (temp1.length() > 4)
+        {
+            temp1 = temp1.substring(0, 4);
+        }
+        String temp2 = String.valueOf(MaxHP);
+        this.Speak(temp1 + "/" + temp2,(float) 0.1);
 	
 	}
 	

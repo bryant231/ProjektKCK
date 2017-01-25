@@ -16,7 +16,7 @@ import com.mygdx.game.actors.Enemy3;
 
 public class TutorialScreen extends AbstractScreen {
 	private Console console;
-	public int ilosc_elemt_w_tablicy_przeszkod = 1; // tworzymy tablice
+	public int ilosc_elemt_w_tablicy_przeszkod = 4; // tworzymy tablice
 													// przeszkod taka duzo ile
 													// jest elementow na ktore
 													// nie mozna wejsc w grze
@@ -164,6 +164,9 @@ public class TutorialScreen extends AbstractScreen {
 
 	public void CantStandInit() {
 		CantStand[0] = new AbstractButton(289, 320, 32, 32);
+		CantStand[1] = new AbstractButton(609, 320, 32, 32);
+		CantStand[2] = new AbstractButton(289, 610, 32, 32);
+		CantStand[3] = new AbstractButton(609, 610, 32, 32);
 	}
 
 	public void refreshCamera() {
