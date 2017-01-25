@@ -34,6 +34,7 @@ public class StartowyNPC extends NPC {
 	public void rozmowa() {
 		sayHello();
 		if (przywitanie == true) {
+			przywitanie = false;
 			rozmowa[0] = true;
 			console.EnterClickedforNPC = false;
 		}
