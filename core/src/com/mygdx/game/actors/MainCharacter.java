@@ -365,13 +365,13 @@ public class MainCharacter extends Actors {
 		TryBounds = new Rectangle();
 		Cloud = new cloud(50, X + 35, Y + 20,1);
 		statistics = new Statistics[4];
-		statistics[0] = new Statistics(10, 0, 0,(float)0.30);
+		statistics[0] = new Statistics(10, 0, 0,0.8f);
 		statistics[0].textField.setMessageText(statistics[0].getStatistic());
-		statistics[1] = new Statistics(10, 0, 0,(float)0.30);
+		statistics[1] = new Statistics(10, 0, 0,0.8f);
 		statistics[1].textField.setMessageText(statistics[1].getStatistic());
-		statistics[2] = new Statistics(10, 0, 0,(float)0.30);
+		statistics[2] = new Statistics(10, 0, 0,0.8f);
 		statistics[2].textField.setMessageText(statistics[2].getStatistic());
-		statistics[3] = new Statistics(10, 0, 0,(float)0.30);
+		statistics[3] = new Statistics(10, 0, 0,0.8f);
 		statistics[3].textField.setMessageText(statistics[3].getStatistic());
 		bounds.set(image.getX() + 32, image.getY() + 20, 32, 32);
 	}
