@@ -2,11 +2,8 @@ package com.mygdx.screens;
 
 import java.io.IOException;
 
-import com.badlogic.gdx.utils.Timer;
-import com.badlogic.gdx.utils.Timer.Task;
 import com.mygdx.game.ProjektKCK;
 import com.mygdx.game.Buttons.AbstractButton;
-import com.mygdx.game.Cloud.cloud;
 import com.mygdx.game.actors.Actors;
 import com.mygdx.game.actors.MainCharacter;
 import com.mygdx.game.actors.StartowyNPC;
@@ -18,7 +15,6 @@ import com.mygdx.game.actors.Enemy2;
 import com.mygdx.game.actors.Enemy3;
 
 public class TutorialScreen extends AbstractScreen {
-
 	private Console console;
 	public int ilosc_elemt_w_tablicy_przeszkod = 1; // tworzymy tablice
 													// przeszkod taka duzo ile
