@@ -58,7 +58,7 @@ public class TutorialScreen extends AbstractScreen {
 		console = new Console(600, 270, 25, 1);
 		mainCharacter = new MainCharacter(432, 450, "CharacterMovement\\walking e0000.png", stage);
 		npc0 = new StartowyNPC("Pierwszy", 560, 482, "StarterNPC\\stoppped_0001.png", this.stage, this.console,
-				this.Parser1, 450, 450, 200, 140);
+				this.Parser1, 450, 450, 300, 140);
 		npc1 = new StartowyNPC("Startowy", 1650, 560, "NPCMovement\\stopped0000.png", this.stage, this.console,
 				this.Parser1, 1600, 500, 200, 140);
 		enemy1 = new Enemy("Wrog", 1650, 350, "SpiderEnemy\\stopped_0000.png", this.stage, this.console, this.Parser1,
