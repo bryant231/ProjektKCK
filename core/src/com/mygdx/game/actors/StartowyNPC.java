@@ -39,13 +39,14 @@ public class StartowyNPC extends NPC {
 			console.EnterClickedforNPC = false;
 		}
 		if (rozmowa[0] == true) {
-			iloscCzasuTimer = (float)0.01;
+			//iloscCzasuTimer = (float)0.01;
 			czasowaZmienna++;
 			if (czasowaZmienna > 200) {
 				this.Speak("Oblicz 2+2",3);
 				if (console.EnterClickedforNPC == true) {
 					rozmowa[0] = false;
 					rozmowa[1] = true;
+					
 				}
 			}
 			
@@ -65,12 +66,24 @@ public class StartowyNPC extends NPC {
 			if(wynik.PodajElementLista_co_zwracam(0).equals("Z_Kom") && wynik.PodajCzyLiczba() == true){
 				if (wynik.PodajLiczba()==4) {
 					//console.phraseEntereddlaNPC = false;
+					
 					this.Speak("Dobrze!",3);
+					rozmowa[1] = false;
+					rozmowa[2] = true;
+					czasowaZmienna = 0;
 				}
 				else {
 					this.Speak("No chyba nie umiesz liczyc! sprobuj ponownie! Ile to 2+2?!",3);
 				}
 			}
+		}
+		
+		if (rozmowa[2] == true) {
+			czasowaZmienna++;
+			if (czasowaZmienna < 200)
+				this.Speak("Dobrze!",(float)0.01);
+			if (czasowaZmienna >200)
+			this.Speak("no ten tego", (float)0.01);
 		}
 		
 		if(MainCharacterInside == false){
