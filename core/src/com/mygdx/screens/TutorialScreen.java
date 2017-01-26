@@ -183,8 +183,8 @@ public class TutorialScreen extends AbstractScreen {
 	public void CanTalkWithNpc() {
 		npc1.collisionCheck(mainCharacter.bounds);
 		npc0.collisionCheck(mainCharacter.bounds);
-		npc1.rozmowa();
-		npc0.rozmowa();
+		npc1.rozmowa(enemy1);
+		npc0.rozmowa(enemy1);
 		if (enemy1.Defeated == false)
 			enemy1.displayDamage();
 		if (enemy2.Defeated == false)

@@ -22,16 +22,8 @@ public class StartowyNPC extends NPC {
 		// TODO Auto-generated constructor stub
 	}
 
-	/*
-	 * public void testPlayer() {
-	 * 
-	 * this.Speak("Oblicz 2+2!"); if (console.phraseEntereddlaNPC == true) {
-	 * console.phraseEntereddlaNPC = false; if
-	 * (console.LastSentenceInConsole.contains("4")) { this.Speak("Dobrze!");
-	 * 
-	 * } } }
-	 */
-	public void rozmowa() {
+	
+	public void rozmowa(Enemy enemy1) {
 		sayHello();
 		if (przywitanie == true) {
 			przywitanie = false;
@@ -42,11 +34,11 @@ public class StartowyNPC extends NPC {
 			//iloscCzasuTimer = (float)0.01;
 			czasowaZmienna++;
 			if (czasowaZmienna > 200) {
-				this.Speak("Oblicz 2+2",3);
+				this.Speak("Nie wyglądasz jak tutejszy! \nMam nadzieje ze nie szukasz klopotów",3);
 				if (console.EnterClickedforNPC == true) {
 					rozmowa[0] = false;
 					rozmowa[1] = true;
-					
+					console.EnterClickedforNPC = false ;
 				}
 			}
 			
@@ -63,35 +55,42 @@ public class StartowyNPC extends NPC {
 				e.printStackTrace();
 			}
 			
-			if(wynik.PodajElementLista_co_zwracam(0).equals("Z_Kom") && wynik.PodajCzyLiczba() == true){
-				if (wynik.PodajLiczba()==4) {
+			if(wynik.PodajElementLista_co_zwracam(0).equals("Z_Kom") && wynik.PodajElementLista_co_zwracam(2).equals("czy_szukasz_klopotow")){
+				
 					//console.phraseEntereddlaNPC = false;
+					if(console.LastSentenceInConsole.contains("tak")) {
+					this.Speak("To świetnie bo mam dla ciebie zadanie.\nPomożesz mi?",(float)0.01);
 					
-					this.Speak("Dobrze!",3);
+					if(console.EnterClickedforNPC == true ) {
 					rozmowa[1] = false;
 					rozmowa[2] = true;
-					czasowaZmienna = 0;
-				}
-				else {
-					this.Speak("No chyba nie umiesz liczyc! sprobuj ponownie! Ile to 2+2?!",3);
-				}
+					czasowaZmienna=0;
+					}
+					}
+					else if(console.LastSentenceInConsole.contains("nie")) {
+						this.Speak("To dobrze bo lubimy tu przyjaznych.\nZechciałbyś mi pomóc?!",(float)0.01);
+					}
+					else this.Speak("Odpowiedz poprostu TAK lub NIE\ni nie marudź mi tu!", (float)0.01);
+				
 			}
+			
 		}
 		
 		if (rozmowa[2] == true) {
 			czasowaZmienna++;
-			if (czasowaZmienna < 200)
-				this.Speak("Dobrze!",(float)0.01);
-			if (czasowaZmienna >200)
-			this.Speak("no ten tego", (float)0.01);
+			this.Speak("Rozpraw się z tym pająkiem a\nnastepnie do mnie wróć po nagrodę!", 10);
+			if(czasowaZmienna>300) {
+			rozmowa[2] = false;
+			czasowaZmienna = 0;
+			}
 		}
 		
-		if(MainCharacterInside == false){
-			przywitanie = false;
-			czasowaZmienna = 0;
-			for (int i = 0; i < 5; i++) {
-				rozmowa[i] = false;
-			}
+		if ((MainCharacterInside == true)&&(enemy1.Defeated == true)) {
+			rozmowa[3] = true;
+		}
+		
+		if (rozmowa[3] == true) {
+			this.Speak("Wiedziałem że można na Ciebie liczyć!\nW podziękowaniu otrzymujesz miecz oraz statystykę do wyboru.\nChciałbyś być silniejszy , zwinniejszy , szybszy czy wytrzymalszy?", 1);
 		}
 		
 	}
