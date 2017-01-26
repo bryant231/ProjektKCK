@@ -20,7 +20,8 @@ public class cloud {  //chatbox
 	
 	private void textFieldStyleInit() {
 		textFieldStyle = new TextFieldStyle();
-		textFieldStyle.fontColor = Color.WHITE;
+		textFieldStyle.fontColor = Color.BLACK;
+		textFieldStyle.messageFontColor=Color.WHITE;
 		textFieldStyle.font = bitmapFont;
 	}
 

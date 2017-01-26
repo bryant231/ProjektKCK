@@ -1,9 +1,12 @@
 package com.mygdx.game.actors;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.TextField;
+import com.badlogic.gdx.scenes.scene2d.ui.TextField.TextFieldStyle;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 import com.mygdx.game.Buttons.AbstractButton;
@@ -356,24 +359,24 @@ public class MainCharacter extends Actors {
 	}
 
 	public void updateStatistics() {
-		statistics[0].textField.setMessageText(statistics[0].getStatistic());
-		statistics[1].textField.setMessageText(statistics[1].getStatistic());
-		statistics[2].textField.setMessageText(statistics[2].getStatistic());
-		statistics[3].textField.setMessageText(statistics[3].getStatistic());
+		statistics[0].textField.setText(statistics[0].getStatistic());
+		statistics[1].textField.setText(statistics[1].getStatistic());
+		statistics[2].textField.setText(statistics[2].getStatistic());
+		statistics[3].textField.setText(statistics[3].getStatistic());
 	}
 
 	public void init(int X, int Y) {
 		TryBounds = new Rectangle();
-		Cloud = new cloud(50, X + 35, Y + 20,1);
+		Cloud = new cloud(30, X + 35, Y + 20,1);
 		statistics = new Statistics[4];
-		statistics[0] = new Statistics(10, 0, 0,0.8f);
-		statistics[0].textField.setMessageText(statistics[0].getStatistic());
-		statistics[1] = new Statistics(10, 0, 0,0.8f);
-		statistics[1].textField.setMessageText(statistics[1].getStatistic());
-		statistics[2] = new Statistics(10, 0, 0,0.8f);
-		statistics[2].textField.setMessageText(statistics[2].getStatistic());
-		statistics[3] = new Statistics(10, 0, 0,0.8f);
-		statistics[3].textField.setMessageText(statistics[3].getStatistic());
+		statistics[0] = new Statistics(30, 0, 0,0.8f);
+		statistics[0].textField.setText(statistics[0].getStatistic());
+		statistics[1] = new Statistics(30, 0, 0,0.8f);
+		statistics[1].textField.setText(statistics[1].getStatistic());
+		statistics[2] = new Statistics(30, 0, 0,0.8f);
+		statistics[2].textField.setText(statistics[2].getStatistic());
+		statistics[3] = new Statistics(30, 0, 0,0.8f);
+		statistics[3].textField.setText(statistics[3].getStatistic());
 		bounds.set(image.getX() + 32, image.getY() + 20, 32, 32);
 	}
 
