@@ -80,6 +80,7 @@ Z_Kom -> rozkaz_komunikacji przywitanie
 Z_Kom -> rozkaz_komunikacji pozegnanie
 Z_Kom -> rozkaz_komunikacji liczba_dla_parsera
 Z_Kom -> rozkaz_komunikacji czy_szukasz_klopotow
+Z_Kom -> rozkaz_komunikacji statystyka
 rozkaz_komunikacji -> Mów
 rozkaz_komunikacji -> mów
 rozkaz_komunikacji -> Powiedz
@@ -93,6 +94,10 @@ przywitanie -> hej
 przywitanie -> Witaj!
 przywitanie -> Witaj
 przywitanie -> witaj
+statystyka -> silniejszy
+statystyka -> zwinniejszy
+statystyka -> szybszy
+statystyka -> wytrzymalszy
 czy_szukasz_klopotow -> tak
 czy_szukasz_klopotow -> nie
 pozegnanie -> Żegnaj!

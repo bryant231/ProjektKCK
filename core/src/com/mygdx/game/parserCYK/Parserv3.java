@@ -444,6 +444,10 @@ public class Parserv3{
 								tekst = result[ig];
 								tekst21 = wynik_przeparsuj[ig];
 							}
+							if(wynik_przeparsuj[ig].equals("statystyka")){
+								tekst = result[ig];
+								tekst21 = wynik_przeparsuj[ig];
+							}
 						}
 						int liczba2=0;
 						for(int ig=0;ig<wynik_przeparsuj.length;ig++){

@@ -1,7 +1,7 @@
 package com.mygdx.game.Cloud;
 
 public class Statistics extends cloud{
-	private int statistic;
+	public int statistic;
 
 	public Statistics(int WIDTH, float X, float Y,float size) {
 		super(WIDTH, X, Y,size);

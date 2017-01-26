@@ -59,6 +59,7 @@ public class Enemy3 extends Entity {
 			if (CurrentHP < 0)
 			{
 				defeat();
+				
 			}
 		}
 	}
