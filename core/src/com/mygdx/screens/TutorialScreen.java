@@ -66,9 +66,9 @@ public class TutorialScreen extends AbstractScreen {
                 this.Parser1, 450, 450, 200, 140);
         npc1 = new StartowyNPC("Startowy", 1650, 560, "NPCMovement\\stopped0000.png", this.stage, this.console,
                 this.Parser1, 1600, 500, 200, 140);
-        enemy1 = new Enemy("Wrog", 1650, 350, "SpiderEnemy\\stopped_0000.png", this.stage, this.console, this.Parser1,
+        enemy1 = new Enemy("Wrog", 1650, 350, "OrcMovement\\stopped0000.png", this.stage, this.console, this.Parser1,
                 1600, 300, 200, 140);
-        enemy2 = new Enemy2("Wrog2", 3100, 462, "SpiderEnemy\\stopped_0000.png", this.stage, this.console, this.Parser1,
+        enemy2 = new Enemy2("Wrog2", 3100, 462, "OgreEnemy\\stopped0002.png", this.stage, this.console, this.Parser1,
                 3050, 412, 200, 140);
         enemy3 = new Enemy3("Wrog3", 850, 440, "SpiderEnemy\\stopped_0000.png", this.stage, this.console, this.Parser1,
                 800, 390, 200, 140);
