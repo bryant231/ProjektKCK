@@ -352,6 +352,7 @@ public class MainCharacter extends Actors {
 	public void updateActorBounds() {
 		bounds.set(image.getX() + 28, image.getY() + 19, 44, 56);
 		Cloud.setPosition(bounds.getX() + 40 + 35, bounds.getY() + 19 + 44);
+		Cloud2.setPosition(bounds.getX() + 50 , bounds.getY() + 19 + 44);
 	}
 
 	public void updateStatistics() {
