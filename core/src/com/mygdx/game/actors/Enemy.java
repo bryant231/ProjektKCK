@@ -22,7 +22,7 @@ public class Enemy extends Entity {
 	protected int NumberOfAttacks = 0;
 	public boolean Defeated = false;
 	
-	public void IsHitbyMC()
+	public void IsHitbyMC(MainCharacter mainCharacter)
 	{	
 		if (Defeated == false) {
 		if(MainCharacterInside == true)
@@ -42,6 +42,14 @@ public class Enemy extends Entity {
 		displayDamage();
 		if (CurrentHP < 0)
 		{
+			mainCharacter.statistics[0].change(1);
+			mainCharacter.statistics[1].change(1);
+			mainCharacter.statistics[2].change(1);
+			mainCharacter.statistics[3].change(1);
+			mainCharacter.statistics[0].textField.setMessageText(mainCharacter.statistics[0].getStatistic());
+			mainCharacter.statistics[1].textField.setMessageText(mainCharacter.statistics[1].getStatistic());
+			mainCharacter.statistics[2].textField.setMessageText(mainCharacter.statistics[2].getStatistic());
+			mainCharacter.statistics[3].textField.setMessageText(mainCharacter.statistics[3].getStatistic());
 			defeat();
 		}
 		}

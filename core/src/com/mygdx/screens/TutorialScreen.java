@@ -261,25 +261,45 @@ public class TutorialScreen extends AbstractScreen {
             enemy2.displayDamage();
         if (enemy3.Defeated == false)
             enemy3.displayDamage();
+        
+        if (enemy1.Defeated == true){
+            CantStand[65].bounds.set(0, 0, 0, 0);
+            CantStand[65].button.setX(0);
+            CantStand[65].button.setY(0);
+        }
+            
+        if (enemy2.Defeated == true){
+        	CantStand[64].bounds.set(0, 0, 0, 0);
+            CantStand[64].button.setX(0);
+            CantStand[64].button.setY(0);
+        }
+            
+        if (enemy3.Defeated == true){
+        	CantStand[63].bounds.set(0, 0, 0, 0);
+            CantStand[63].button.setX(0);
+            CantStand[63].button.setY(0);
+        }
+            
+        
     }
  
     public void CanAttackNpc(ZwrocDoScreen wynik){
         enemy1.collisionCheck(mainCharacter.bounds);
         enemy2.collisionCheck(mainCharacter.bounds);
         enemy3.collisionCheck(mainCharacter.bounds);
-        ilosc_elemt_w_tablicy_przeszkod = 63;
+        
         if(mainCharacter.GetCanAttack() == true){
             if (enemy1.isMainCharacterInside() == true) {
             enemy1.SetUsedWord(wynik.PodajElementLista_co_zwracam(1));
-            enemy1.IsHitbyMC();
+            enemy1.IsHitbyMC(mainCharacter);
             }
             if (enemy2.isMainCharacterInside() == true) {
             enemy2.SetUsedWord(wynik.PodajElementLista_co_zwracam(1));
-            enemy2.IsHitbyMC();
+            enemy2.IsHitbyMC(mainCharacter);
             }
             if (enemy3.isMainCharacterInside() == true) {
             enemy3.SetUsedWord(wynik.PodajElementLista_co_zwracam(1));
-            enemy3.IsHitbyMC();
+            enemy3.IsHitbyMC(mainCharacter);
             }
         }
     }

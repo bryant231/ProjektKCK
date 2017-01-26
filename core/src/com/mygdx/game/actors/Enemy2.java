@@ -22,7 +22,7 @@ public class Enemy2 extends Entity {
     public boolean Defeated = false;
    
    
-    public void IsHitbyMC()
+    public void IsHitbyMC(MainCharacter mainCharacter)
     {
         System.out.println("Shit be happening");
         if(MainCharacterInside == true)
@@ -40,7 +40,15 @@ public class Enemy2 extends Entity {
            
             DealBasicDamage(tempLength);
             displayDamage();
-            if (CurrentHP < 0)      {defeat();}
+            if (CurrentHP < 0)      {defeat();
+            mainCharacter.statistics[0].change(1);
+			mainCharacter.statistics[1].change(1);
+			mainCharacter.statistics[2].change(1);
+			mainCharacter.statistics[3].change(1);
+			mainCharacter.statistics[0].textField.setMessageText(mainCharacter.statistics[0].getStatistic());
+			mainCharacter.statistics[1].textField.setMessageText(mainCharacter.statistics[1].getStatistic());
+			mainCharacter.statistics[2].textField.setMessageText(mainCharacter.statistics[2].getStatistic());
+			mainCharacter.statistics[3].textField.setMessageText(mainCharacter.statistics[3].getStatistic());}
         }
     }
    

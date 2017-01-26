@@ -87,7 +87,7 @@ public class StartowyNPC extends NPC {
 			}
 		}
 		
-		if ((MainCharacterInside == true)&&(enemy3.Defeated == true)&&(pokonanie_przeciwnika == false)) {
+		if ((MainCharacterInside == true)&&(enemy3.Defeated == true)&&(pokonanie_przeciwnika == false)&&(rozmowa[2] == true)) {
 			rozmowa[2] = false;
 			rozmowa[3] = true;
 			pokonanie_przeciwnika = true;
