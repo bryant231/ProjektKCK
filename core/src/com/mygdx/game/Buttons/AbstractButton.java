@@ -16,7 +16,7 @@ public class AbstractButton{
 		button.setWidth(WIDTHH);
 		button.setHeight(HEIGHTT);
 		bounds.set(button.getX(), button.getY(), button.getWidth(), button.getHeight());
-		button.setDebug(true);
+		button.setDebug(false);
 	}
 	
 }

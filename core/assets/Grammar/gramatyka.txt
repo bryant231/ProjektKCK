@@ -77,9 +77,13 @@ przeciwnik1 -> wroga
 
 #-- Gramatyka dla komunikacji
 Z_Kom -> rozkaz_komunikacji przywitanie
+Z_Kom -> rozkaz_komunikacji przywitanie przymiotnik3
 Z_Kom -> rozkaz_komunikacji pozegnanie
 Z_Kom -> rozkaz_komunikacji liczba_dla_parsera
 Z_Kom -> rozkaz_komunikacji czy_szukasz_klopotow
+Z_Kom -> rozkaz_komunikacji przymiotnik1 przymiotnik2 czy_szukasz_klopotow
+Z_Kom -> rozkaz_komunikacji czasownik1 statystyka
+Z_Kom -> rozkaz_komunikacji czasownik2 czasownik3 statystyka
 Z_Kom -> rozkaz_komunikacji statystyka
 rozkaz_komunikacji -> Mów
 rozkaz_komunikacji -> mów
@@ -94,11 +98,24 @@ przywitanie -> hej
 przywitanie -> Witaj!
 przywitanie -> Witaj
 przywitanie -> witaj
+przywitanie -> witam
 statystyka -> silniejszy
 statystyka -> zwinniejszy
 statystyka -> szybszy
 statystyka -> wytrzymalszy
+statystyka -> siłe
+statystyka -> siła
+statystyka -> zwinność
+statystyka -> szybkość
+statystyka -> wytrzymałość
 czy_szukasz_klopotow -> tak
 czy_szukasz_klopotow -> nie
 pozegnanie -> Żegnaj!
 pozegnanie -> Cześć
+czasownik1 -> wybieram
+czasownik2 -> chciałbym
+czasownik2 -? chce
+czasownik3 -> być
+przymiotnik1 -> oczywiście
+przymiotnik2 -> że
+przymiotnik3 -> serdecznie

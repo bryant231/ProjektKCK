@@ -121,27 +121,27 @@ public class StartowyNPC extends NPC {
 					
 					//console.phraseEntereddlaNPC = false;
 					if(czasowaZmienna > 3000) rozmowa[4] = false;
-					if(console.LastSentenceInConsole.contains("silniejszy")) {
+					if(console.LastSentenceInConsole.contains("sił")||(console.LastSentenceInConsole.contains("sil"))) {
 					this.Speak("Dodalem ci trochę siły!\nOdwiedź kowala który znajduje się w mieście.\nWydaje mi się ze jest on w stanie ci pomóc.",(float)0.01);
 					
 					if(czasowaZmienna==0)	mainCharacter.statistics[0].change(6);
 					mainCharacter.statistics[0].textField.setText(mainCharacter.statistics[0].getStatistic());
 					czasowaZmienna++;
 					}
-					else if(console.LastSentenceInConsole.contains("szybszy")) {
+					else if(console.LastSentenceInConsole.contains("szyb")) {
 						this.Speak("Dodalem ci trochę szybkości!\nOdwiedź kowala który znajduje się w mieście.\nWydaje mi się ze jest on w stanie ci pomóc.",(float)0.01);
 						
 						if(czasowaZmienna==0)	mainCharacter.statistics[1].change(6);
 						mainCharacter.statistics[1].textField.setText(mainCharacter.statistics[1].getStatistic());
 						czasowaZmienna++;
 					}
-					else if(console.LastSentenceInConsole.contains("wytrzymalszy")) {
+					else if(console.LastSentenceInConsole.contains("wytrzym")) {
 						this.Speak("Dodalem ci trochę wytrzymałości!\nOdwiedź kowala który znajduje się w mieście.\nWydaje mi się ze jest on w stanie ci pomóc.",(float)0.01);
 						if(czasowaZmienna==0) mainCharacter.statistics[2].change(6);
 						mainCharacter.statistics[2].textField.setText(mainCharacter.statistics[2].getStatistic());
 						czasowaZmienna++;
 					}
-					else if(console.LastSentenceInConsole.contains("zwinniejszy")) {
+					else if(console.LastSentenceInConsole.contains("zwin")) {
 						this.Speak("Dodalem ci trochę zwinności!\nOdwiedź kowala który znajduje się w mieście.\nWydaje mi się ze jest on w stanie ci pomóc.",(float)0.01);
 						if(czasowaZmienna==0)	mainCharacter.statistics[3].change(6);
 						mainCharacter.statistics[3].textField.setText(mainCharacter.statistics[3].getStatistic());

@@ -32,7 +32,7 @@ public abstract class Entity extends Actors {
 		this.console = console;
 		this.Parser = parser;
 		button = new AbstractButton(a, b, c, d); // 1600,600, 200, 140
-		button.button.setDebug(true);
+		button.button.setDebug(false);
 		generator = new Random();
 		MainCharacterInside = true;
 		stage.addActor(button.button);
