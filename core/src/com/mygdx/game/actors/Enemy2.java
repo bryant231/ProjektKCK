@@ -24,10 +24,10 @@ public class Enemy2 extends Entity {
    
     public void IsHitbyMC(MainCharacter mainCharacter)
     {
-        //System.out.println("Shit be happening");
+        //System.out.println("Things be happening");
         if(MainCharacterInside == true)
         {
-            //System.out.println("Shit be happening");
+            //System.out.println("Things be happening");
             int tempLength;
             int length = LastWordUsed.length();
             if ((length%2)==0)                          {WordBalance++;}
